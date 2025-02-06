@@ -8,6 +8,46 @@ public class Main
 {
     public static void main(String[] args)
     {
+        //JavaFullCourseForBeginnersWithMosh();
+
+        JavaFullCourseWithBroCode();
+    }
+
+    public static void JavaFullCourseWithBroCode()
+    {
+        // link to the course: https://www.youtube.com/watch?v=xTtL8E4LzTQ
+
+        homeWorkAssignment1();
+
+    }
+
+    public static void homeWorkAssignment1()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+        System.out.print("Enter the value of pi: ");
+        double pi = scanner.nextDouble();
+        System.out.print("Enter your gender (M/F): ");
+        char gender = scanner.next().charAt(0);
+        System.out.print("Are you an admin in this system? (true/false): ");
+        boolean isAdmin = scanner.nextBoolean();
+
+        System.out.println();
+        System.out.println("Your name is: " + name);
+        System.out.println("You are " + age + " years old");
+        System.out.println("The value of pi you entered is: " + pi);
+        System.out.println("Your gender is: " + gender);
+        System.out.println("You an admin in this system? " + isAdmin);
+    }
+
+    public static void JavaFullCourseForBeginnersWithMosh()
+    {
+        // link to the course: https://www.youtube.com/watch?v=eIrMbAQSU34
+
         //learnSection1();
 
         mortgageCalculator();
