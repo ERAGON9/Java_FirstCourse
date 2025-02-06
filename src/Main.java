@@ -12,7 +12,11 @@ public class Main
 
         //mortgageCalculator();
 
-        learnSection2();
+        //learnSection2();
+
+        //FizzBuzz();
+
+        learnSection3();
     }
 
     public static void learnSection1()
@@ -181,6 +185,151 @@ public class Main
 
     public static void learnSection2()
     {
+        // comparison operators
+        int x = 1;
+        int y = 2;
 
+        System.out.println(x > y); // operations: >, <, >=, <=, ==, !=
+        System.out.println(x != y);
+        System.out.println(x <= y);
+
+
+        System.out.println();
+        // logical operators
+        int temperature = 22;
+        boolean isWarm = temperature > 20 && temperature < 30; // operations: &&, ||, !
+        System.out.println(isWarm);
+        temperature = 27;
+        isWarm = temperature < 20 || temperature > 30;
+        System.out.println(isWarm);
+        boolean hasHighIncome = false;
+        boolean hasGoodCredit = true;
+        boolean hasCriminalRecord = false;
+        boolean isEligible = (hasHighIncome || hasGoodCredit) && !hasCriminalRecord;
+        System.out.println(isEligible);
+
+
+        System.out.println();
+        // if statements
+        int temp = 32;
+        if (temp > 30)
+        {
+            System.out.println("It's a hot day");
+            System.out.println("Drink water");
+        }
+        else if (temp > 20)
+        {
+            System.out.println("Beautiful day");
+        }
+        else
+        {
+            System.out.println("Cold day");
+        }
+
+        int income = 120_000;
+        boolean hasHighIncome2 = income > 100_000;
+        System.out.println(hasHighIncome2);
+
+        String className = income > 100_000 ? "First" : "Economy";
+        System.out.println(className);
+
+
+        System.out.println();
+        // switch statements
+        String role = "admin";
+        switch (role) // also can be int, char, byte, short, enum, ...
+        {
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+            case "moderator":
+                System.out.println("You're a moderator");
+                break;
+            default:
+                System.out.println("You're a guest");
+        }
+    }
+
+    public static void FizzBuzz()
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("FizzBuzz");
+        System.out.println("--------");
+
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+
+        if (number % 5 == 0)
+        {
+            if (number % 3 == 0)
+            {
+                System.out.println("FizzBuzz");
+            }
+            else
+            {
+                System.out.println("Fizz");
+            }
+        }
+        else if (number % 3 == 0)
+        {
+            System.out.println("Buzz");
+        }
+        else
+        {
+            System.out.println(number);
+        }
+    }
+
+    public static void learnSection3()
+    {
+        // for loops
+        for(int i = 5; i > 0; i--)
+        {
+            System.out.println("Hello from for loop index: " + i);
+        }
+
+
+        System.out.println();
+        // while loops
+        int i = 5;
+        while (i > 0)
+        {
+            System.out.println("Hello from while loop index: " + i);
+            i--;
+        }
+
+        System.out.println();
+        Scanner scanner = new Scanner(System.in);
+        String input = "";
+        while (true)
+        {
+            System.out.print("Input: ");
+            input = scanner.next().toLowerCase();
+            if (input.equals("quit"))
+                break;
+            else if (input.equals("pass"))
+                continue;
+            System.out.println(input);
+        }
+
+
+        System.out.println();
+        // do-while loops
+        do
+        {
+            System.out.print("Input: ");
+            input = scanner.next().toLowerCase();
+            System.out.println(input);
+        } while (!input.equals("quit")); // will run at least once.
+
+
+        System.out.println();
+        // for-each loops
+        String[] fruits = {"Apple", "Mango", "Orange"};
+
+        for (String fruit : fruits)
+        {
+            System.out.println(fruit);
+        }
     }
 }
