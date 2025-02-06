@@ -10,13 +10,13 @@ public class Main
     {
         //learnSection1();
 
-        //mortgageCalculator();
+        mortgageCalculator();
 
         //learnSection2();
 
         //FizzBuzz();
 
-        learnSection3();
+        //learnSection3();
     }
 
     public static void learnSection1()
@@ -164,15 +164,36 @@ public class Main
         System.out.println("Mortgage Calculator");
         System.out.println("-------------------");
 
-        System.out.print("Principal: ");
-        int principal = scanner.nextInt();
+        int principal = 0;
+        while (true)
+        {
+            System.out.print("Principal: ");
+            principal = scanner.nextInt();
+            if (principal >= 1_000 && principal <= 1_000_000)
+                break;
+            System.out.println("Enter a value between 1,000 and 1,000,000");
+        }
 
-        System.out.print("Annual Interest Rate: ");
-        double annualInterestRate = scanner.nextDouble();
+        double annualInterestRate = 0;
+        while (true)
+        {
+            System.out.print("Annual Interest Rate: ");
+            annualInterestRate = scanner.nextDouble();
+            if (annualInterestRate >= 1 && annualInterestRate <= 30)
+                break;
+            System.out.println("Enter a value between 1 and 30");
+        }
         double monthlyInterestRate = annualInterestRate / MONTHS_IN_YEAR / PERCENT; // for example: 3.92% -> 0.0392
 
-        System.out.print("Period (Years): ");
-        int periodYears = scanner.nextInt();
+        int periodYears = 0;
+        while (true)
+        {
+            System.out.print("Period (Years): ");
+            periodYears = scanner.nextInt();
+            if (periodYears >= 1 && periodYears <= 30)
+                break;
+            System.out.println("Enter a value between 1 and 30");
+        }
         int periodMonths = periodYears * MONTHS_IN_YEAR;
 
         double mortgage = principal
