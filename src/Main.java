@@ -30,7 +30,9 @@ public class Main
 
         //usePrintf();
 
-        compoundInterestCalculator();
+        //compoundInterestCalculator();
+
+        stringMethods();
     }
 
     public static void homeWorkAssignment1()
@@ -283,7 +285,48 @@ public class Main
         scanner.close();
     }
 
+    public static void stringMethods()
+    {
+        String name = "Lior Barak";
+        int length = name.length();
+        char letter = name.charAt(5);
+        int index = name.indexOf('B'); // First index of 'B'
+        int lastIndex = name.lastIndexOf('a'); // Last index of 'a'
 
+        System.out.printf("string is: %s \nit's length is: %d\n", name, length);
+        System.out.println("letter at index 5 is: " + letter);
+        System.out.println("index of 'B' is: " + index);
+        System.out.println("last index of 'a' is: " + lastIndex);
+
+        name = name.toUpperCase();
+        System.out.println("name in upper case: " + name);
+        name = name.toLowerCase();
+        System.out.println("name in lower case: " + name);
+
+        name = "    Lior Barak    ";
+        System.out.println("name with spaces: " + name);
+        name = name.trim();
+        System.out.println("name without spaces: " + name);
+
+        name = name.replace('a', 'o');
+        System.out.println("name with replaced 'a' to 'o': " + name);
+
+        System.out.println("name is empty?: " + name.isEmpty());
+        if (name.isEmpty())
+            System.out.println("Your name is empty");
+        else
+            System.out.println("Your name is not empty");
+
+        if (name.contains(" "))
+            System.out.println("Your name contains a space");
+        else
+            System.out.println("Your name does not contain a space");
+
+        if (name.equalsIgnoreCase("password"))
+            System.out.println("Your name can't be password");
+        else
+            System.out.println("Hello " + name);
+    }
 
 
 
