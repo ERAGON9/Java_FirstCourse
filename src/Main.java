@@ -9,22 +9,24 @@ public class Main
 {
     public static void main(String[] args)
     {
-        //JavaFullCourseForBeginnersWithMosh();
+        //javaFullCourseForBeginnersWithMosh();
 
-        JavaFullCourseWithBroCode();
+        javaFullCourseWithBroCode();
     }
 
-    public static void JavaFullCourseWithBroCode()
+    public static void javaFullCourseWithBroCode()
     {
         // link to the course: https://www.youtube.com/watch?v=xTtL8E4LzTQ
 
         //homeWorkAssignment1();
 
-        //MadLibsGame();
+        //madLibsGame();
 
-        //ShoppingChartProgram();
+        //shoppingChartProgram();
 
-        UseRandom();
+        //useRandom();
+
+        useMathLibrary();
 
     }
 
@@ -53,7 +55,7 @@ public class Main
         scanner.close();
     }
 
-    public static void MadLibsGame()
+    public static void madLibsGame()
     {
         Scanner scanner = new Scanner(System.in);
         String adjective1;
@@ -87,7 +89,7 @@ public class Main
         scanner.close();
     }
 
-    public static void ShoppingChartProgram()
+    public static void shoppingChartProgram()
     {
         Scanner scanner = new Scanner(System.in);
 
@@ -112,7 +114,7 @@ public class Main
         scanner.close();
     }
 
-    public static void UseRandom()
+    public static void useRandom()
     {
         Random randomMachine = new Random();
 
@@ -126,9 +128,60 @@ public class Main
         System.out.println("Random coin flip is Heads: " + isHeads);
     }
 
+    public static void useMathLibrary()
+    {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("PI is: " + Math.PI);
+        System.out.println("E is: " + Math.E);
+
+        int result = (int)Math.pow(2, 6); // also: Math.abs, Math.sqrt, Math.rout, Math.ceil, Math.floor, Math.max, Math.min, Math.random
+        System.out.println("2^6 is: " + result);
+
+        double result2 = Math.round(3.49);
+        System.out.println("round(3.49) is: " + result2);
+
+        hypotenuseCalculator(scanner);
+        circleCalculator(scanner);
+
+        scanner.close();
+    }
+
+    private static void hypotenuseCalculator(Scanner scanner)
+    {
+        System.out.println("\nHypotenuse Calculator");
+        System.out.println("---------------------\n");
+
+        System.out.print("Enter the length of side A: ");
+        double a = scanner.nextDouble();
+
+        System.out.print("Enter the length of side B: ");
+        double b = scanner.nextDouble();
+
+        double c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+        System.out.println("The length of the hypotenuse C: " + c + "cm");
+    }
+
+    private static void circleCalculator(Scanner scanner)
+    {
+        System.out.println("\nCircle Calculator");
+        System.out.println("----------------\n");
+
+        System.out.print("Enter the radius: ");
+        double radius = scanner.nextDouble();
+
+        double circumference = 2 * Math.PI * radius;
+        System.out.printf("The circumference: %.3fcm\n", circumference);
+
+        double area = Math.PI * Math.pow(radius, 2);
+        System.out.printf("The area: %.3fcm^2\n", area);
+
+        double volume = (4.0/3.0) * Math.PI * Math.pow(radius, 3);
+        System.out.printf("The volume: %.3fcm^3\n", volume);
+    }
 
 
-    public static void JavaFullCourseForBeginnersWithMosh()
+
+    public static void javaFullCourseForBeginnersWithMosh()
     {
         // link to the course: https://www.youtube.com/watch?v=eIrMbAQSU34
 
@@ -138,7 +191,7 @@ public class Main
 
         //learnSection2();
 
-        //FizzBuzz();
+        //fizzBuzz();
 
         //learnSection3();
     }
@@ -395,7 +448,7 @@ public class Main
         }
     }
 
-    public static void FizzBuzz()
+    public static void fizzBuzz()
     {
         Scanner scanner = new Scanner(System.in);
         System.out.println("FizzBuzz");
