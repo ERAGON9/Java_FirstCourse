@@ -32,7 +32,9 @@ public class Main
 
         //compoundInterestCalculator();
 
-        stringMethods();
+        //stringMethods();
+
+        weightConverter();
     }
 
     public static void homeWorkAssignment1()
@@ -328,7 +330,42 @@ public class Main
             System.out.println("Hello " + name);
     }
 
+    public static void weightConverter()
+    {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Weight Converter");
+        System.out.println("----------------");
+
+        System.out.println("Option 1. convert from LBS to KG");
+        System.out.println("Option 2. convert from KG to LBS");
+        System.out.print("Choose an option (1/2): ");
+        int choice = scanner.nextInt();
+
+        double weight;
+        double newWeight;
+        if (choice == 1)
+        {
+            System.out.print("Enter your weight in LBS: ");
+            weight = scanner.nextDouble();
+            newWeight = weight * 0.453592;
+            System.out.printf("Your weight in KG is: %.2f\n", newWeight);
+        }
+        else if(choice == 2)
+        {
+            System.out.print("Enter your weight in KG: ");
+            weight = scanner.nextDouble();
+            newWeight = weight / 0.453592;
+            System.out.printf("Your weight in LBS is: %.2f\n", newWeight);
+        }
+        else
+        {
+            System.out.println("Invalid choice");
+        }
+
+
+        scanner.close();
+    }
 
 
 
