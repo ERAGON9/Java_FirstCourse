@@ -17,7 +17,9 @@ public class Main
     {
         // link to the course: https://www.youtube.com/watch?v=xTtL8E4LzTQ
 
-        homeWorkAssignment1();
+        //homeWorkAssignment1();
+
+        MadLibsGame();
 
     }
 
@@ -42,6 +44,42 @@ public class Main
         System.out.println("The value of pi you entered is: " + pi);
         System.out.println("Your gender is: " + gender);
         System.out.println("You an admin in this system? " + isAdmin);
+
+        scanner.close();
+    }
+
+    public static void MadLibsGame()
+    {
+        Scanner scanner = new Scanner(System.in);
+        String adjective1;
+        String noun1;
+        String adjective2;
+        String verb1;
+        String adjective3;
+
+        System.out.println();
+        System.out.println("Welcome to the Mad Libs Game!");
+        System.out.println("-------------------------------");
+        System.out.println();
+
+        System.out.print("Enter an adjective (description): ");
+        adjective1 = scanner.nextLine();
+        System.out.print("Enter a noun (animal or person): ");
+        noun1 = scanner.nextLine();
+        System.out.print("Enter an adjective (description): ");
+        adjective2 = scanner.nextLine();
+        System.out.print("Enter a verb and with -ing (action): ");
+        verb1 = scanner.nextLine();
+        System.out.print("Enter an adjective (description): ");
+        adjective3 = scanner.nextLine();
+
+        System.out.println();
+        System.out.println("Today I went to a " + adjective1 + " zoo.");
+        System.out.println("In an exhibit, I saw a " + noun1 + ".");
+        System.out.println(noun1 + " was " + adjective2 + " and " + verb1 + "!");
+        System.out.println("I was " + adjective3 + "!");
+
+        scanner.close();
     }
 
     public static void JavaFullCourseForBeginnersWithMosh()
