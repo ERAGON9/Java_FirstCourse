@@ -28,8 +28,9 @@ public class Main
 
         //useMathLibrary();
 
-        usePrintf();
+        //usePrintf();
 
+        compoundInterestCalculator();
     }
 
     public static void homeWorkAssignment1()
@@ -256,6 +257,35 @@ public class Main
         System.out.printf("%-4d\n", id3);
         System.out.printf("%-4d\n", id4);
     }
+
+    public static void compoundInterestCalculator()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        double principal;
+        double rate;
+        int timesCompounded;
+        int years;
+        double amount;
+
+        System.out.print("Enter the principal: ");
+        principal = scanner.nextDouble();
+        System.out.print("Enter the rate (in %): ");
+        rate = scanner.nextDouble() / 100;
+        System.out.print("Enter the number of times compounded per year: ");
+        timesCompounded = scanner.nextInt();
+        System.out.print("Enter thr number of years: ");
+        years = scanner.nextInt();
+
+        amount = principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
+        System.out.printf("The amount after %d years is: $%,.2f", years, amount);
+
+        scanner.close();
+    }
+
+
+
+
 
 
 
