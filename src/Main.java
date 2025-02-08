@@ -26,7 +26,9 @@ public class Main
 
         //useRandom();
 
-        useMathLibrary();
+        //useMathLibrary();
+
+        usePrintf();
 
     }
 
@@ -177,6 +179,82 @@ public class Main
 
         double volume = (4.0/3.0) * Math.PI * Math.pow(radius, 3);
         System.out.printf("The volume: %.3fcm^3\n", volume);
+    }
+
+    public static void usePrintf()
+    {
+        // format => %[flag][width][.precision][specifier-character]
+
+        String name = "Lior";
+        int age = 26;
+        char firstLetter = 'L';
+        double height = 1.75;
+        boolean isStudent = true;
+
+        //[specifier-character] =>  %s - string,
+        //                          %d - int,
+        //                          %c - char,
+        //                          %f - float/double,
+        //                          %b - boolean.
+        System.out.printf("Hello %s\n", name);
+        System.out.printf("You are %d years old\n", age);
+        System.out.printf("Your name starts with %c\n", firstLetter);
+        System.out.printf("You are %.2f meters tall\n", height);
+        System.out.printf("Are you a student? %b\n", isStudent);
+        System.out.printf("Hello %s You are %d years old, your name start with %c, your height is: %.2f," +
+                           " your are a student: %b\n", name, age, firstLetter, height, isStudent);
+
+
+        // [.precision] => %.2f - 2 decimal points,
+        //                 %.3f - 3 decimal points.
+        double number1 = 1.23456789;
+        System.out.printf("Number1: %.3f\n", number1);
+
+
+        // [flag] => + = include sign,
+        //           , = comma grouping separated,
+        //           ( = negative numbers are enclosed in (),
+        //           space = display a minus if negative, space if positive.
+        double number2 = 99.87;
+        double number3 = -99.87;
+        System.out.printf("Number2: %+.2f\n", number2);
+        System.out.printf("Number3: %+.2f\n", number3);
+        double number4 = 10_000.123;
+        System.out.printf("Number4: %,.2f\n", number4);
+
+        System.out.printf("Number2: %(.2f\n", number2);
+        System.out.printf("Number3: %(.2f\n", number3);
+
+        System.out.printf("Number2: % .2f\n", number2);
+        System.out.printf("Number3: % .2f\n", number3);
+
+
+        // [width] => 0 = zero-padded,
+        //            number = right justified padding,
+        //            negative number = left justified padding.
+        int id1 = 1;
+        int id2 = 23;
+        int id3 = 456;
+        int id4 = 7890;
+        System.out.printf("%d\n", id1);
+        System.out.printf("%d\n", id2);
+        System.out.printf("%d\n", id3);
+        System.out.printf("%d\n", id4);
+
+        System.out.printf("%04d\n", id1);
+        System.out.printf("%04d\n", id2);
+        System.out.printf("%04d\n", id3);
+        System.out.printf("%04d\n", id4);
+
+        System.out.printf("%4d\n", id1);
+        System.out.printf("%4d\n", id2);
+        System.out.printf("%4d\n", id3);
+        System.out.printf("%4d\n", id4);
+
+        System.out.printf("%-4d\n", id1);
+        System.out.printf("%-4d\n", id2);
+        System.out.printf("%-4d\n", id3);
+        System.out.printf("%-4d\n", id4);
     }
 
 
