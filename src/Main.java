@@ -32,11 +32,13 @@ public class Main
 
         //compoundInterestCalculator();
 
-        //stringMethods();
+        //useStringMethods();
 
         //weightConverter();
 
-        temperatureConverter();
+        //temperatureConverter();
+
+        useEnhancedSwitch();
     }
 
     public static void homeWorkAssignment1()
@@ -289,7 +291,7 @@ public class Main
         scanner.close();
     }
 
-    public static void stringMethods()
+    public static void useStringMethods()
     {
         String name = "Lior Barak";
         int length = name.length();
@@ -388,7 +390,56 @@ public class Main
         scanner.close();
     }
 
+    public static void useEnhancedSwitch()
+    {
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Enter the day of the week: ");
+        String day = scanner.nextLine();
+
+        String dayType = switch(day)
+        {
+            case "Sunday","Monday", "Tuesday", "Wednesday", "Thursday" ->
+                    "weekday";
+            case "Friday", "Saturday" ->
+                    "weekend";
+            default ->
+                    "invalid day";
+        };
+
+        System.out.println("The day is a/n " + dayType);
+
+        /*
+        switch(day) // Another option to use enhanced switch
+        {
+            case "Sunday","Monday", "Tuesday", "Wednesday", "Thursday"
+                    -> System.out.println("weekday");
+            case "Friday", "Saturday" ->
+                    System.out.println("weekend");
+            default ->
+                    System.out.println("Invalid day");
+        }
+
+        switch(day) // The regular switch statement
+        {
+            case "Sunday":
+            case "Monday":
+            case "Tuesday":
+            case "Wednesday":
+            case "Thursday":
+                System.out.println("weekday");
+                break;
+            case "Friday":
+            case "Saturday":
+                System.out.println("weekend");
+                break;
+            default:
+                System.out.println("Invalid day");
+        }
+        */
+
+        scanner.close();
+    }
 
 
 
