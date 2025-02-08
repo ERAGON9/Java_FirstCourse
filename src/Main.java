@@ -34,7 +34,9 @@ public class Main
 
         //stringMethods();
 
-        weightConverter();
+        //weightConverter();
+
+        temperatureConverter();
     }
 
     public static void homeWorkAssignment1()
@@ -366,6 +368,30 @@ public class Main
 
         scanner.close();
     }
+
+    public static void temperatureConverter()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        double temperature;
+        double newTemperature;
+        String unit;
+
+        System.out.print("Enter the temperature: ");
+        temperature = scanner.nextDouble();
+        System.out.print("Convert to Celsius or Fahrenheit (C/F): ");
+        unit = scanner.next().toUpperCase();
+
+        newTemperature = (unit.equals("C")) ? (temperature - 32) * 5 / 9 : (temperature * 9 / 5) + 32;
+        System.out.printf("The new temperature is: %.1f%s", newTemperature, unit);
+
+        scanner.close();
+    }
+
+
+
+
+
 
 
 
