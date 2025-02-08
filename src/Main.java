@@ -2,6 +2,7 @@ import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main
@@ -23,7 +24,7 @@ public class Main
 
         //ShoppingChartProgram();
 
-        homeWorkAssignment2();
+        UseRandom();
 
     }
 
@@ -111,9 +112,18 @@ public class Main
         scanner.close();
     }
 
-    public static void homeWorkAssignment2()
+    public static void UseRandom()
     {
+        Random randomMachine = new Random();
 
+        int number = randomMachine.nextInt(1, 7); // number in [1, 6]
+        System.out.println("Random number between 1 to 6 is: " + number);
+
+        double number2 = randomMachine.nextDouble(); // number in [0, 1)
+        System.out.println("Random number between 0 to 0.9999... is: " + number2);
+
+        boolean isHeads = randomMachine.nextBoolean();
+        System.out.println("Random coin flip is Heads: " + isHeads);
     }
 
 
@@ -254,8 +264,8 @@ public class Main
         NumberFormat currency = NumberFormat.getCurrencyInstance();
         String resultNF = currency.format(1234567.891);
         System.out.println(resultNF);
-        NumberFormat precent = NumberFormat.getPercentInstance();
-        String resultNF2 = precent.format(0.3);
+        NumberFormat percent = NumberFormat.getPercentInstance();
+        String resultNF2 = percent.format(0.3);
         System.out.println(resultNF2);
         String resultNF3 = NumberFormat.getPercentInstance().format(0.3); // another way to do the same.
         System.out.println(resultNF3);
