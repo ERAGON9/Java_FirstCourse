@@ -40,7 +40,9 @@ public class Main
 
         //useEnhancedSwitch();
 
-        calculator();
+        //calculator();
+
+        numberGuessingGame();
     }
 
     public static void homeWorkAssignment1()
@@ -494,6 +496,50 @@ public class Main
 
         scanner.close();
     }
+
+    public static void numberGuessingGame()
+    {
+        Scanner scanner = new Scanner(System.in);
+        Random randomMachine = new Random();
+
+        System.out.println("\nNumber Guessing Game!");
+        System.out.println("---------------------\n");
+
+        int guess;
+        int attempts = 0;
+        int minBound;
+        int maxBound;
+
+        System.out.print("Enter the min bound: ");
+        minBound = scanner.nextInt();
+        System.out.print("Enter the max bound: ");
+        maxBound = scanner.nextInt();
+        int randomNumber = randomMachine.nextInt(minBound, maxBound + 1);
+
+        System.out.printf("Guess a number between %d-%d\n", minBound, maxBound);
+        do
+        {
+            System.out.print("Enter your guess: ");
+            guess = scanner.nextInt();
+            attempts++;
+
+            if (guess < randomNumber)
+            {
+                System.out.println("TOO LOW! Try again");
+            }
+            else if (guess > randomNumber)
+            {
+                System.out.println("TOO HIGH! Try again");
+            }
+
+        } while (guess != randomNumber);
+
+        System.out.println("Congrats!");
+        System.out.println("You guessed the number " + randomNumber + " in " + attempts +" attempts");
+
+        scanner.close();
+    }
+
 
 
 
