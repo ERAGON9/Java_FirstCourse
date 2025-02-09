@@ -50,7 +50,9 @@ public class Main
 
         //diceRollerProgram();
 
-        useArrays();
+        //useArrays();
+
+        useVarArgs();
     }
 
     public static void homeWorkAssignment1()
@@ -793,6 +795,42 @@ public class Main
         }
         scanner.close();
     }
+
+    public static void useVarArgs()
+    {
+        System.out.println("The sum of numbers 1-6 is: " + useVarArgsToAdd(1, 2, 3, 4, 5, 6));
+        System.out.println("The average of numbers 1-6 is: " + useVarArgsToAverage(1, 2, 3, 4, 5, 6));
+    }
+
+    private static int useVarArgsToAdd(int... numbers)
+    {
+        int sum = 0;
+
+        for (int number : numbers)
+        {
+            sum += number;
+        }
+
+        return sum;
+    }
+
+    private static int useVarArgsToAverage(int... numbers)
+    {
+        int sum = 0;
+
+        if (numbers.length == 0)
+        {
+            return 0;
+        }
+
+        for (int number : numbers)
+        {
+            sum += number;
+        }
+
+        return sum / numbers.length;
+    }
+
 
 
 
