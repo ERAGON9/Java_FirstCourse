@@ -48,7 +48,9 @@ public class Main
 
         //bankingProgram();
 
-        diceRollerProgram();
+        //diceRollerProgram();
+
+        useArrays();
     }
 
     public static void homeWorkAssignment1()
@@ -693,7 +695,7 @@ public class Main
         scanner.close();
     }
 
-    private  static void printDie(int roll)
+    private static void printDie(int roll)
     {
         String dice1 = """
                  -------
@@ -749,6 +751,48 @@ public class Main
         }
     }
 
+    public static void useArrays()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] fruits = {"Apple", "Orange", "Banana", "Coconut"};
+        int length = fruits.length;
+
+        for (int i = 0; i < length; i++)
+        {
+            System.out.println(fruits[i]);
+        }
+
+        System.out.println();
+        for (String fruit : fruits) // Enhanced for loop == for-each loop
+        {
+            System.out.println(fruit);
+        }
+
+        System.out.println();
+        Arrays.sort(fruits);
+        System.out.println(Arrays.toString(fruits));
+
+
+        System.out.println();
+        System.out.print("What number of food do you want?: ");
+        int size = scanner.nextInt();
+        scanner.nextLine(); // To consume the '\n' character left by nextInt()!!!
+
+        String[] foods = new String[size];
+
+        for (int i = 0; i < foods.length; i++)
+        {
+            System.out.print("Enter a food: ");
+            foods[i] = scanner.nextLine();
+        }
+
+        for (String food : foods)
+        {
+            System.out.println("food: " + food);
+        }
+        scanner.close();
+    }
 
 
 
