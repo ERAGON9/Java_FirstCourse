@@ -52,7 +52,9 @@ public class Main
 
         //useArrays();
 
-        useVarArgs();
+        //useVarArgs();
+
+        telephone2DArray();
     }
 
     public static void homeWorkAssignment1()
@@ -830,6 +832,42 @@ public class Main
 
         return sum / numbers.length;
     }
+
+    public static void telephone2DArray()
+    {
+        char[][] telephone = {{'1', '2', '3'},
+                              {'4', '5', '6'},
+                              {'7', '8', '9'},
+                              {'*', '0', '#'}};
+
+        for (char[] row : telephone)
+        {
+            for (char digit : row)
+            {
+                System.out.print(digit + " ");
+            }
+
+            System.out.println();
+        }
+    }
+
+    public static void section37()
+    {
+
+    }
+
+    public static void section38()
+    {
+
+    }
+
+    public static void section39()
+    {
+
+    }
+
+
+
 
 
 
