@@ -38,7 +38,9 @@ public class Main
 
         //temperatureConverter();
 
-        useEnhancedSwitch();
+        //useEnhancedSwitch();
+
+        calculator();
     }
 
     public static void homeWorkAssignment1()
@@ -441,7 +443,57 @@ public class Main
         scanner.close();
     }
 
+    public static void calculator()
+    {
+        Scanner scanner = new Scanner(System.in);
 
+        double number1;
+        double number2;
+        char operator;
+        double result = 0;
+        boolean validOperator = true;
+
+        System.out.println("\nCalculator");
+        System.out.println("----------\n");
+
+        System.out.print("Enter the first number: ");
+        number1 = scanner.nextDouble();
+        System.out.print("Enter an operator (+, -, *, /, ^): ");
+        operator = scanner.next().charAt(0);
+        System.out.print("Enter the second number: ");
+        number2 = scanner.nextDouble();
+
+        switch (operator)
+        {
+            case '+' -> result = number1 + number2;
+            case '-' -> result = number1 - number2;
+            case '*' -> result = number1 * number2;
+            case '/' ->
+            {
+                if (number2 == 0)
+                {
+                    System.out.println("Cannot divide by zero!");
+                    validOperator = false;
+                } else
+                {
+                    result = number1 / number2;
+                }
+            }
+            case '^' -> result = Math.pow(number1, number2);
+            default ->
+            {
+                System.out.println("Invalid operator!");
+                validOperator = false;
+            }
+        }
+
+        if (validOperator)
+        {
+            System.out.printf("The result is: %.2f", result);
+        }
+
+        scanner.close();
+    }
 
 
 
