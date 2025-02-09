@@ -44,7 +44,9 @@ public class Main
 
         //numberGuessingGame();
 
-        matrixOfSymbol();
+        //matrixOfSymbol();
+
+        bankingProgram();
     }
 
     public static void homeWorkAssignment1()
@@ -572,6 +574,94 @@ public class Main
 
         scanner.close();
     }
+
+    public static void bankingProgram()
+    {
+        Scanner scanner = new Scanner(System.in);
+
+        double balance = 0;
+        boolean isRunning = true;
+        int choice;
+
+        System.out.println("\nBanking Program");
+        System.out.println("---------------");
+
+        while (isRunning)
+        {
+            System.out.println("Welcome to the bank!");
+            System.out.println("*********************");
+            System.out.println("1. Show Balance");
+            System.out.println("2. Deposit");
+            System.out.println("3. Withdraw");
+            System.out.println("4. Exit");
+            System.out.println("*********************");
+
+            System.out.print("Enter your choice: ");
+            choice = scanner.nextInt();
+            switch (choice)
+            {
+                case 1 -> showBalance(balance);
+                case 2 -> balance += deposit(scanner);
+                case 3 -> balance -= withdraw(scanner, balance);
+                case 4 -> isRunning = false;
+                default -> System.out.println("Invalid choice!");
+            }
+
+            System.out.println();
+        }
+
+        System.out.println("Thank you! Have a nice day!");
+
+        scanner.close();
+    }
+
+    private static void showBalance(double balance)
+    {
+        System.out.printf("Your Balance is: $%.2f\n", balance);
+    }
+
+    private static double deposit(Scanner scanner)
+    {
+        System.out.print("Enter an amount to be deposited: ");
+        double amountToDeposit = scanner.nextDouble();
+
+        if (amountToDeposit < 0)
+        {
+            System.out.println("Invalid amount to deposit!");
+            return 0;
+        }
+
+        System.out.printf("You have deposited: $%.2f\n", amountToDeposit);
+
+        return amountToDeposit;
+    }
+
+    private static double withdraw(Scanner scanner, double balance)
+    {
+        System.out.print("Enter an amount to be withdrawn: ");
+        double amountToWithdraw = scanner.nextDouble();
+
+        if (amountToWithdraw > balance)
+        {
+            System.out.println("Insufficient funds!");
+            return 0;
+        }
+        else if (amountToWithdraw < 0 )
+        {
+            System.out.println("Invalid amount to withdraw!");
+            return 0;
+        }
+
+        System.out.printf("You have withdrawn: $%.2f\n",amountToWithdraw);
+
+        return  amountToWithdraw;
+    }
+
+
+
+
+
+
 
 
 
